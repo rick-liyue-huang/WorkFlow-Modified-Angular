@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "strict": false,
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "baseUrl": "",
+    "types": []
+  },
+  "exclude": ["test.ts", "**/*.spec.ts"]
+}
