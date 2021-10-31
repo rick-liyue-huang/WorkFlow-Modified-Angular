@@ -498,19 +498,6 @@
       "id": "jOMvwir"
     },
     {
-      "taskListId": "rSVLFeN",
-      "desc": "sdsd",
-      "completed": false,
-      "ownerId": "vcABGk8",
-      "participantIds": [],
-      "dueDate": null,
-      "priority": 2,
-      "remark": "",
-      "reminder": null,
-      "createDate": "2021-10-31T00:10:12.055Z",
-      "id": "n1FhD4c"
-    },
-    {
       "taskListId": "SfZSlCT",
       "desc": "adfsd",
       "completed": false,
@@ -519,16 +506,6 @@
       "priority": 3,
       "createDate": "2021-10-31T00:25:15.803Z",
       "id": "rVC42K2"
-    },
-    {
-      "taskListId": "rSVLFeN",
-      "desc": "fdf",
-      "completed": false,
-      "ownerId": "vcABGk8",
-      "participantIds": [],
-      "priority": 3,
-      "createDate": "2021-10-31T00:26:38.805Z",
-      "id": "zgNp8XZ"
     }
   ],
   "taskFilter": [
@@ -759,21 +736,6 @@
       "id": "kIHT0-h"
     },
     {
-      "taskId": "n1FhD4c",
-      "operator": {
-        "id": "vcABGk8",
-        "email": "test@test.cc",
-        "name": "test",
-        "avatar": "avatars:svg-14"
-      },
-      "operation": {
-        "payload": "sdsd",
-        "type": "createTask"
-      },
-      "date": "2021-10-31T00:10:12.077Z",
-      "id": "Hig7AwD"
-    },
-    {
       "taskId": "rVC42K2",
       "operator": {
         "id": "vcABGk8",
@@ -787,49 +749,6 @@
       },
       "date": "2021-10-31T00:25:15.860Z",
       "id": "VOyqiMj"
-    },
-    {
-      "taskId": "zgNp8XZ",
-      "operator": {
-        "id": "vcABGk8",
-        "email": "test@test.cc",
-        "name": "test",
-        "avatar": "avatars:svg-14"
-      },
-      "operation": {
-        "payload": "fdf",
-        "type": "createTask"
-      },
-      "date": "2021-10-31T00:26:38.895Z",
-      "id": "zrVNuQL"
-    },
-    {
-      "taskId": "zgNp8XZ",
-      "operator": {
-        "id": "vcABGk8",
-        "email": "test@test.cc",
-        "name": "test",
-        "avatar": "avatars:svg-14"
-      },
-      "operation": {
-        "type": "completeTask"
-      },
-      "date": "2021-10-31T00:26:40.488Z",
-      "id": "uuzqweF"
-    },
-    {
-      "taskId": "zgNp8XZ",
-      "operator": {
-        "id": "vcABGk8",
-        "email": "test@test.cc",
-        "name": "test",
-        "avatar": "avatars:svg-14"
-      },
-      "operation": {
-        "type": "recreateTask"
-      },
-      "date": "2021-10-31T00:26:41.083Z",
-      "id": "-MZUuIm"
     }
   ],
   "quotes": [

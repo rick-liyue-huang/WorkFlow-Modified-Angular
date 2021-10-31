@@ -12,12 +12,12 @@ import * as DateFns from 'date-fns';
 export const getDefaultDueDateVMs = (): TaskFilterItemVM[] => {
   return [
     {
-      label: 'TodayDue',
+      label: 'Due Today',
       value: 'today',
       checked: false
     },
     {
-      label: '已逾期',
+      label: 'Overdue',
       value: 'overdue',
       checked: false
     },
@@ -473,7 +473,7 @@ export const getSortVMs = (taskFilter: TaskFilter): TaskFilterItemVM[] => {
 };
 
 export const getSortVMLabel = (taskFilterVM: TaskFilterVM): string => {
-  let label = '项目默认排序';
+  let label = 'Projects in default order';
   taskFilterVM.sortVMs.forEach((sortVM: TaskFilterItemVM) => {
     if (sortVM.value === taskFilterVM.sort) {
       label = sortVM.label;
@@ -486,7 +486,7 @@ export const getSortVMLabel = (taskFilterVM: TaskFilterVM): string => {
 export const getDefaultCategoryVMs = (): TaskFilterItemVM[] => {
   return [
     {
-      label: '执行者',
+      label: 'Executor',
       value: 'hasOwner',
       checked: false
     },
@@ -496,12 +496,12 @@ export const getDefaultCategoryVMs = (): TaskFilterItemVM[] => {
       checked: false
     },
     {
-      label: '创建Time',
+      label: 'Created Time',
       value: 'hasCreateDate',
       checked: false
     },
     {
-      label: '优先级',
+      label: 'Priority',
       value: 'hasPriority',
       checked: false
     }
@@ -534,7 +534,7 @@ export const getOwnerVMs = (owners: User[]): TaskFilterOwnerVM[] => {
 };
 
 export const getOwnerVMName = (ownerVM: TaskFilterOwnerVM): string => {
-  return ownerVM.owner ? <string>ownerVM.owner.name : '待认领';
+  return ownerVM.owner ? <string>ownerVM.owner.name : 'Claim this task';
 };
 
 export const getOwnerVMAvatar = (ownerVM: TaskFilterOwnerVM): string => {
@@ -580,17 +580,17 @@ export const getCustomDateDesc = (date: Date): string => {
 export const getDefaultPrioritiesVMs = (): TaskFilterPriorityVM[] => {
   return [
     {
-      label: '普通',
+      label: 'normal',
       value: 3,
       checked: false
     },
     {
-      label: '重要',
+      label: 'important',
       value: 2,
       checked: false
     },
     {
-      label: '紧急',
+      label: 'emergent',
       value: 1,
       checked: false
     }
