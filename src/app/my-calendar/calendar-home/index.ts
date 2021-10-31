@@ -32,7 +32,7 @@ import * as fromRoot from '../../reducers';
           <mat-icon class="md-48">chevron_left</mat-icon>
         </button>
         <button mat-button mwlCalendarToday [(viewDate)]="viewDate">
-          {{ viewDate | date: 'yyyy-MM-dd' }}
+          {{ viewDate | date: 'dd/MM/yyyy' }}
         </button>
         <button
           mat-icon-button
