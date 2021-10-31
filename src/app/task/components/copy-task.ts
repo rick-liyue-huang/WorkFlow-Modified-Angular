@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
       <div matDialogContent>
         <mat-form-field>
           <mat-select
-            placeholder="选择目标列表"
+            placeholder="Select Target List"
             formControlName="targetList"
             class="full-width"
           >
@@ -28,7 +28,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
             type="submit"
             [disabled]="!form.valid"
           >
-            确定
+            Confirm
           </button>
           <button matDialogClose mat-raised-button type="button">Close</button>
         </div>
@@ -50,7 +50,7 @@ export class CopyTaskComponent implements OnInit {
 
   ngOnInit() {
     this.lists$ = this.data.lists;
-    this.dialogTitle = '移动所有任务';
+    this.dialogTitle = 'Move all Tasks In List';
     this.form = this.fb.group({
       targetList: ['', Validators.required]
     });

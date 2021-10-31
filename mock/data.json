@@ -181,7 +181,7 @@
     {
       "name": "fads",
       "desc": "dd",
-      "coverImg": "/assets/img/covers/4.jpg",
+      "coverImg": "/assets/img/covers/3.jpg",
       "members": [
         "vcABGk8"
       ],
@@ -304,16 +304,16 @@
       "id": "XP5T7Tq"
     },
     {
-      "name": "Completed",
-      "projectId": "eRhGxwt",
-      "order": 3,
-      "id": "Mh9dbqP"
-    },
-    {
       "name": "Ready",
       "projectId": "eRhGxwt",
       "order": 1,
       "id": "SfZSlCT"
+    },
+    {
+      "name": "Completed",
+      "order": 3,
+      "projectId": "eRhGxwt",
+      "id": "rSVLFeN"
     }
   ],
   "tasks": [
@@ -498,17 +498,37 @@
       "id": "jOMvwir"
     },
     {
-      "taskListId": "SfZSlCT",
-      "desc": "fdsdds",
+      "taskListId": "rSVLFeN",
+      "desc": "sdsd",
       "completed": false,
       "ownerId": "vcABGk8",
       "participantIds": [],
       "dueDate": null,
-      "priority": 1,
+      "priority": 2,
       "remark": "",
       "reminder": null,
-      "createDate": "2021-10-30T23:40:35.634Z",
-      "id": "-0KD37J"
+      "createDate": "2021-10-31T00:10:12.055Z",
+      "id": "n1FhD4c"
+    },
+    {
+      "taskListId": "SfZSlCT",
+      "desc": "adfsd",
+      "completed": false,
+      "ownerId": "vcABGk8",
+      "participantIds": [],
+      "priority": 3,
+      "createDate": "2021-10-31T00:25:15.803Z",
+      "id": "rVC42K2"
+    },
+    {
+      "taskListId": "rSVLFeN",
+      "desc": "fdf",
+      "completed": false,
+      "ownerId": "vcABGk8",
+      "participantIds": [],
+      "priority": 3,
+      "createDate": "2021-10-31T00:26:38.805Z",
+      "id": "zgNp8XZ"
     }
   ],
   "taskFilter": [
@@ -739,7 +759,7 @@
       "id": "kIHT0-h"
     },
     {
-      "taskId": "-0KD37J",
+      "taskId": "n1FhD4c",
       "operator": {
         "id": "vcABGk8",
         "email": "test@test.cc",
@@ -747,14 +767,14 @@
         "avatar": "avatars:svg-14"
       },
       "operation": {
-        "payload": "fdsdds",
+        "payload": "sdsd",
         "type": "createTask"
       },
-      "date": "2021-10-30T23:40:35.649Z",
-      "id": "Wn6n5YP"
+      "date": "2021-10-31T00:10:12.077Z",
+      "id": "Hig7AwD"
     },
     {
-      "taskId": "-0KD37J",
+      "taskId": "rVC42K2",
       "operator": {
         "id": "vcABGk8",
         "email": "test@test.cc",
@@ -762,11 +782,54 @@
         "avatar": "avatars:svg-14"
       },
       "operation": {
-        "payload": 1,
-        "type": "updateTaskPriority"
+        "payload": "adfsd",
+        "type": "createTask"
       },
-      "date": "2021-10-30T23:40:41.794Z",
-      "id": "TZPFgnR"
+      "date": "2021-10-31T00:25:15.860Z",
+      "id": "VOyqiMj"
+    },
+    {
+      "taskId": "zgNp8XZ",
+      "operator": {
+        "id": "vcABGk8",
+        "email": "test@test.cc",
+        "name": "test",
+        "avatar": "avatars:svg-14"
+      },
+      "operation": {
+        "payload": "fdf",
+        "type": "createTask"
+      },
+      "date": "2021-10-31T00:26:38.895Z",
+      "id": "zrVNuQL"
+    },
+    {
+      "taskId": "zgNp8XZ",
+      "operator": {
+        "id": "vcABGk8",
+        "email": "test@test.cc",
+        "name": "test",
+        "avatar": "avatars:svg-14"
+      },
+      "operation": {
+        "type": "completeTask"
+      },
+      "date": "2021-10-31T00:26:40.488Z",
+      "id": "uuzqweF"
+    },
+    {
+      "taskId": "zgNp8XZ",
+      "operator": {
+        "id": "vcABGk8",
+        "email": "test@test.cc",
+        "name": "test",
+        "avatar": "avatars:svg-14"
+      },
+      "operation": {
+        "type": "recreateTask"
+      },
+      "date": "2021-10-31T00:26:41.083Z",
+      "id": "-MZUuIm"
     }
   ],
   "quotes": [

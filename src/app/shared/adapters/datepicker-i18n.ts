@@ -11,26 +11,26 @@ export class DatepickerI18n {
   changes: Subject<void> = new Subject<void>();
 
   /** A label for the calendar popup (used by screen readers). */
-  calendarLabel = '日历';
+  calendarLabel = 'Calendar';
 
   /** A label for the button used to open the calendar popup (used by screen readers). */
-  openCalendarLabel = '打开日历';
+  openCalendarLabel = 'Open Calendar';
 
   /** A label for the previous month button (used by screen readers). */
-  prevMonthLabel = '上月';
+  prevMonthLabel = 'Previous Month';
 
   /** A label for the next month button (used by screen readers). */
-  nextMonthLabel = '下月';
+  nextMonthLabel = 'Next Month';
 
   /** A label for the previous year button (used by screen readers). */
-  prevYearLabel = '前一年';
+  prevYearLabel = 'Previous Year';
 
   /** A label for the next year button (used by screen readers). */
-  nextYearLabel = '下一年';
+  nextYearLabel = 'Next Year';
 
   /** A label for the 'switch to month view' button (used by screen readers). */
-  switchToMonthViewLabel = '切换月视图';
+  switchToMonthViewLabel = 'Switch to Month View';
 
   /** A label for the 'switch to year view' button (used by screen readers). */
-  switchToYearViewLabel = '切换年视图';
+  switchToYearViewLabel = 'Switch to Year View';
 }

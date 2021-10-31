@@ -4,7 +4,7 @@ import * as DateFns from 'date-fns';
 import * as History from '../domain/history';
 
 const getDayName = (day: number): string => {
-  const dayNames: string[] = ['一', '二', '三', '四', '五', '六', '日'];
+  const dayNames: string[] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fry', 'Sat', 'Sun'];
   return dayNames[day - 1];
 };
 
@@ -36,9 +36,9 @@ const getDateDesc = (date: Date | string): string => {
   const deltaTimestamp: number = nowTimestamp - historyTimestamp;
 
   if (deltaTimestamp < 60 * 1000) {
-    return '几秒前';
+    return 'some seconds ago';
   } else if (deltaTimestamp < 60 * 60 * 1000) {
-    return `${(deltaTimestamp / 1000 / 60).toFixed(0)}分钟前`;
+    return `${(deltaTimestamp / 1000 / 60).toFixed(0)} minutes ago`;
   }
 
   if (
@@ -52,14 +52,14 @@ const getDateDesc = (date: Date | string): string => {
     DateFns.format(yesterdayDate, 'yyyy-MM-dd') ===
     DateFns.format(historyDate, 'yyyy-MM-dd')
   ) {
-    return `昨天 ${DateFns.format(historyDate, 'HH:mm')}`;
+    return `yesterday ${DateFns.format(historyDate, 'HH:mm')}`;
   }
 
   if (
     DateFns.format(thisWeekDate, 'yyyy-MM w') ===
     DateFns.format(historyDate, 'yyyy-MM w')
   ) {
-    return `本周${getDayName(historyDate.getDay())} ${DateFns.format(
+    return `this week ${getDayName(historyDate.getDay())} ${DateFns.format(
       historyDate,
       'HH:mm'
     )}`;
@@ -69,13 +69,13 @@ const getDateDesc = (date: Date | string): string => {
     DateFns.format(lastWeekDate, 'yyyy-MM w') ===
     DateFns.format(historyDate, 'yyyy-MM w')
   ) {
-    return `上周${getDayName(historyDate.getDay())} ${DateFns.format(
+    return `last week ${getDayName(historyDate.getDay())} ${DateFns.format(
       historyDate,
       'HH:mm'
     )}`;
   }
 
-  return typeof date === 'string' ? date : DateFns.format(date, 'M月d日 H:mm');
+  return typeof date === 'string' ? date : DateFns.format(date, 'M/d H:mm');
 };
 
 export const getTaskHistoryVMs = (
@@ -87,21 +87,21 @@ export const getTaskHistoryVMs = (
         return {
           ...history,
           icon: 'add',
-          title: `${history.operator.name} 创建了任务`,
+          title: `${history.operator.name} create task`,
           dateDesc: getDateDesc(history.date)
         };
       case History.COMPLETE_TASK:
         return {
           ...history,
           icon: 'done',
-          title: `${history.operator.name} 完成了任务`,
+          title: `${history.operator.name} complete task`,
           dateDesc: getDateDesc(history.date)
         };
       case History.RECREATE_TASK:
         return {
           ...history,
           icon: 'redo',
-          title: `${history.operator.name} 重做了任务`,
+          title: `${history.operator.name} redo task`,
           dateDesc: getDateDesc(history.date)
         };
       case History.UPDATE_TASK_CONTENT: {
@@ -111,7 +111,7 @@ export const getTaskHistoryVMs = (
         return {
           ...history,
           icon: 'create',
-          title: `${history.operator.name} 更新了内容`,
+          title: `${history.operator.name} modify task content`,
           content: content,
           dateDesc: getDateDesc(history.date)
         };
@@ -122,19 +122,19 @@ export const getTaskHistoryVMs = (
           (<History.UpdateTaskPriorityOperation>history.operation).payload
         ) {
           case 1:
-            priority = '紧急';
+            priority = 'emergent';
             break;
           case 2:
-            priority = '重要';
+            priority = 'important';
             break;
           default:
-            priority = '普通';
+            priority = 'normal';
             break;
         }
         return {
           ...history,
           icon: 'priority_high',
-          title: `${history.operator.name} 更新任务优先级为 ${priority}`,
+          title: `${history.operator.name} update priority as ${priority}`,
           dateDesc: getDateDesc(history.date)
         };
       }
@@ -145,7 +145,7 @@ export const getTaskHistoryVMs = (
         return {
           ...history,
           icon: 'create',
-          title: `${history.operator.name} 更新了备注`,
+          title: `${history.operator.name} update comments`,
           content: content,
           dateDesc: getDateDesc(history.date)
         };
@@ -154,7 +154,7 @@ export const getTaskHistoryVMs = (
         return {
           ...history,
           icon: 'clear',
-          title: `${history.operator.name} 清空了备注`,
+          title: `${history.operator.name} clear comments`,
           dateDesc: getDateDesc(history.date)
         };
       }
@@ -165,7 +165,7 @@ export const getTaskHistoryVMs = (
         return {
           ...history,
           icon: 'date_range',
-          title: `${history.operator.name} 更新DueTime为 ${DateFns.format(
+          title: `${history.operator.name} modify DueTime as ${DateFns.format(
             dueDate,
             'M月d日'
           )}`,
@@ -176,7 +176,7 @@ export const getTaskHistoryVMs = (
         return {
           ...history,
           icon: 'date_range',
-          title: `${history.operator.name} 清除了DueTime`,
+          title: `${history.operator.name} remove DueTime`,
           dateDesc: getDateDesc(history.date)
         };
       }
@@ -184,7 +184,7 @@ export const getTaskHistoryVMs = (
         return {
           ...history,
           icon: 'person',
-          title: `${history.operator.name} 认领了任务`,
+          title: `${history.operator.name} claim task`,
           dateDesc: getDateDesc(history.date)
         };
       }
@@ -194,7 +194,7 @@ export const getTaskHistoryVMs = (
         return {
           ...history,
           icon: 'person',
-          title: `${history.operator.name} 指派给了 ${name}`,
+          title: `${history.operator.name} assign to ${name}`,
           dateDesc: getDateDesc(history.date)
         };
       }
@@ -202,7 +202,7 @@ export const getTaskHistoryVMs = (
         return {
           ...history,
           icon: 'person',
-          title: `${history.operator.name} 移除了执行者`,
+          title: `${history.operator.name} remove executor`,
           dateDesc: getDateDesc(history.date)
         };
       }
@@ -213,7 +213,7 @@ export const getTaskHistoryVMs = (
         return {
           ...history,
           icon: 'person',
-          title: `${history.operator.name} 添加了参与者 ${joinUserNames(
+          title: `${history.operator.name} add participants ${joinUserNames(
             users
           )}`,
           dateDesc: getDateDesc(history.date)
@@ -226,7 +226,7 @@ export const getTaskHistoryVMs = (
         return {
           ...history,
           icon: 'person',
-          title: `${history.operator.name} 移除了参与者 ${joinUserNames(
+          title: `${history.operator.name} remove participants ${joinUserNames(
             users
           )}`,
           dateDesc: getDateDesc(history.date)
@@ -235,7 +235,7 @@ export const getTaskHistoryVMs = (
       default:
         return {
           ...history,
-          title: '未知类型',
+          title: 'unknown type',
           dateDesc: getDateDesc(history.date)
         };
     }

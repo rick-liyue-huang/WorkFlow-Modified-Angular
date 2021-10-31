@@ -76,7 +76,7 @@ $tc-accent:  mat-palette($mat-tcspalette, A200, A100, A400);
 
 // 使用在 palette.scss 中定义的 Material Design 调色板来定义我们自有主题的调色板
 // 对于每个调色板，你可以指定默认、轻柔或更重的色调
-$my-app-primary: mat-palette($mat-indigo);
+$my-app-primary: mat-palette($mat-purple);
 $my-app-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // 警告的调色板此处定义其实是不必要的，因为默认就是红色，但列在这里便于以后的自定义。
@@ -85,7 +85,7 @@ $my-app-warn: mat-palette($mat-red);
 // 创建一个主题对象 (包含所有自定义的调色板).
 // $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 
-$my-app-theme: mat-light-theme($tc-primary, $tc-accent, $my-app-warn);
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 
 // 包含主题风格和每个组件使用的风格。此处可以 @import 或 @include 你的自定义 mixins
 @include angular-material-theme($my-app-theme);
@@ -112,7 +112,7 @@ $my-app-theme: mat-light-theme($tc-primary, $tc-accent, $my-app-warn);
 // @include my-own-component-theme($theme);
 
 // 提供一个深色主题
-$dark-primary: mat-palette($mat-blue-grey);
+$dark-primary: mat-palette($mat-blue);
 $dark-accent: mat-palette($mat-amber, A200, A100, A400);
 $dark-warn: mat-palette($mat-deep-orange);
 // 这句是关键，Material 主题分为 light 和 dark 两种

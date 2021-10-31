@@ -14,7 +14,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
       <h3 matDialogTitle>{{ dialogTitle }}</h3>
       <div matDialogContent>
         <mat-form-field class="full-width">
-          <input matInput placeholder="列表名称" formControlName="name" />
+          <input matInput placeholder="List Name" formControlName="name" />
         </mat-form-field>
       </div>
       <div matDialogActions>
@@ -24,7 +24,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
           type="submit"
           [disabled]="!form.valid"
         >
-          保存
+          Save
         </button>
         <button matDialogClose mat-raised-button type="button">Close</button>
       </div>
@@ -61,7 +61,7 @@ export class NewTaskListComponent implements OnInit {
           Validators.compose([Validators.required, Validators.maxLength(10)])
         ]
       });
-      this.dialogTitle = '创建列表：';
+      this.dialogTitle = 'Create List';
     } else {
       this.form = this.fb.group({
         name: [
@@ -69,7 +69,7 @@ export class NewTaskListComponent implements OnInit {
           Validators.compose([Validators.required, Validators.maxLength(10)])
         ]
       });
-      this.dialogTitle = '修改列表：';
+      this.dialogTitle = 'Edit List';
     }
   }
 

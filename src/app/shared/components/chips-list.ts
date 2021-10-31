@@ -33,8 +33,8 @@ import {
       <span>{{ label }}</span>
       <mat-chip-list>
         <mat-chip color="primary" selected="true" *ngFor="let member of items">
-          {{ member.name }}
-          <span (click)="removeMember(member)" class="remove-tag">>> X</span>
+          {{ member.name }} >>
+          <span (click)="removeMember(member)" class="remove-tag">> Click to update</span>
         </mat-chip>
       </mat-chip-list>
       <mat-form-field *ngIf="displayInput" class="full-width">

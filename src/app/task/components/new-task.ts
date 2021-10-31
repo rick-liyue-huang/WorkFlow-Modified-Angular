@@ -149,15 +149,15 @@ export class NewTaskComponent implements OnInit, OnDestroy {
   delInvisible = true;
   priorities: { label: string; value: number }[] = [
     {
-      label: '普通',
+      label: 'normal',
       value: 3
     },
     {
-      label: '重要',
+      label: 'important',
       value: 2
     },
     {
-      label: '紧急',
+      label: 'emergent',
       value: 1
     }
   ];
@@ -185,7 +185,7 @@ export class NewTaskComponent implements OnInit, OnDestroy {
         followers: [[]],
         remark: ['', Validators.maxLength(40)]
       });
-      this.dialogTitle = '创建任务：';
+      this.dialogTitle = 'Create Task';
       this.delInvisible = true;
     } else {
       this.form = this.fb.group({
@@ -206,7 +206,7 @@ export class NewTaskComponent implements OnInit, OnDestroy {
         ],
         remark: [this.data.task.remark, Validators.maxLength(40)]
       });
-      this.dialogTitle = '修改任务：';
+      this.dialogTitle = 'Edit Task';
       this.delInvisible = false;
 
       this.loadTaskHistories();
